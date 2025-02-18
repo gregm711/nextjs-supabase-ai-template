@@ -16,8 +16,8 @@ export default async function Home() {
             <header className="bg-primary text-primary-foreground p-8 text-center">
               <h1 className="text-5xl font-bold">Build Fast, Scale Faster</h1>
               <p className="mt-4 text-xl">
-                A boilerplate app powered by Next.js, Tailwind CSS, and Supabase
-                Auth.
+                A boilerplate AI app powered by Next.js, Tailwind CSS, and
+                Supabase Auth.
               </p>
             </header>
 
