@@ -15,15 +15,19 @@ export const createClient = async () => {
         setAll(cookiesToSet) {
           try {
             cookiesToSet.forEach(({ name, value, options }) => {
-              cookieStore.set(name, value, options);
+              // Force cookies to be available cross-site (e.g. in an iframe)
+              cookieStore.set(name, value, {
+                ...options,
+                sameSite: "none",
+                secure: true,
+              });
             });
           } catch (error) {
-            // The `set` method was called from a Server Component.
-            // This can be ignored if you have middleware refreshing
-            // user sessions.
+            // The `set` method may be called from a Server Component.
+            // This can be safely ignored if your middleware handles session refreshing.
           }
         },
       },
-    },
+    }
   );
 };

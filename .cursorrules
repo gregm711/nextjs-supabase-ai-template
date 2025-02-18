@@ -1,0 +1,106 @@
+# Cursor Rules
+
+These rules help an AI-based editor understand and navigate our codebase for the Next.js and Supabase Starter Kit. They outline our project’s architecture, coding conventions, and best practices.
+
+---
+
+## Tech Stack
+
+- **Frontend Framework:** Next.js
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS, shadcn/ui
+- **Authentication & Database:** Supabase
+- **Deployment:** Vercel (for the frontend)
+
+---
+
+## Project Structure
+
+### Frontend
+
+- **`app/`**  
+  Contains the Next.js application using the App Router.
+
+- **`components/`**  
+  Shared and reusable React components.
+
+- **`lib/`**  
+  Utility functions, helper modules, and custom hooks.
+
+- **`types/`**  
+  TypeScript type definitions.
+
+- **`public/`**  
+  Static assets such as images and fonts.
+
+- **`styles/`**  
+  Global styles and Tailwind CSS configuration.
+
+### Configuration Files
+
+- **`.env.example`**  
+  Lists all required environment variables.
+
+- **`.env.local`**  
+  Local environment variables (ensure sensitive data is not committed).
+
+---
+
+## Coding & Project Guidelines
+
+### Naming Conventions
+
+- Use **kebab-case** for file and folder names.
+- Use the `@` alias for root-level imports (e.g., `@/components`, `@/lib`).
+
+### Component Development
+
+- **Server Components:**  
+  Fetch data on the server and pass it as props.
+
+- **Client Components:**  
+  Mark with `"use client"` for interactive features.
+
+- **Organization:**
+  - Route-specific components belong in `app/_components/`.
+  - Shared components belong in the `components/` directory.
+
+### Styling & UI
+
+- Use **Tailwind CSS** for styling.
+- Leverage **shadcn/ui** for consistent UI components.
+- Use `lucide-react` for icons when needed.
+
+### Data & API Integration
+
+- **Supabase:**
+  - Handles both authentication and database interactions.
+  - Use environment variables (`NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY`) to configure your connection.
+  - Ensure all data interactions are secure and validated.
+
+---
+
+## AI Cursor Rules Specifics
+
+- **Context Awareness:**  
+  The codebase does not include a FastAPI backend. All backend functionality is managed through Supabase.
+
+- **Focus Areas:**
+
+  - When resolving queries, prioritize Next.js, TypeScript, and Supabase integrations.
+  - For UI/UX concerns, follow Tailwind CSS and shadcn/ui guidelines.
+
+- **Documentation & Navigation:**
+
+  - Maintain up-to-date documentation in line with these rules.
+  - The AI editor should use these guidelines to suggest code improvements, refactorings, or resolve questions based on the current tech stack.
+
+- **Code Quality:**
+  - Ensure code remains modular, testable, and well-documented.
+  - Use clear and descriptive commit messages for version control.
+
+---
+
+## Final Note
+
+These cursor rules serve as a living document. As our project evolves, update these rules to reflect new practices, technologies, or structural changes in our codebase.
