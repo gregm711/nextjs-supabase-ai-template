@@ -7,10 +7,10 @@ import React from "react";
 import { cn } from "@/lib/utils";
 
 const menuItems = [
-  { name: "Features", href: "#link" },
-  { name: "Solution", href: "#link" },
-  { name: "Pricing", href: "#link" },
-  { name: "About", href: "#link" },
+  { name: "Features", href: "#features" },
+  { name: "Solution", href: "#solution" },
+  { name: "Testimonials", href: "#testimonials" },
+  { name: "About", href: "#faqs" },
 ];
 
 export const HeroHeader = () => {
@@ -24,6 +24,11 @@ export const HeroHeader = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleClick = () => {
+    setMenuState(false);
+  };
+
   return (
     <header>
       <nav
@@ -40,9 +45,10 @@ export const HeroHeader = () => {
           <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
             <div className="flex w-full justify-between lg:w-auto">
               <Link
-                href="/"
+                href="#home"
                 aria-label="home"
                 className="flex items-center space-x-2"
+                onClick={handleClick}
               >
                 <Logo />
               </Link>
@@ -64,6 +70,7 @@ export const HeroHeader = () => {
                     <Link
                       href={item.href}
                       className="text-muted-foreground hover:text-accent-foreground block duration-150"
+                      onClick={handleClick}
                     >
                       <span>{item.name}</span>
                     </Link>
@@ -80,6 +87,7 @@ export const HeroHeader = () => {
                       <Link
                         href={item.href}
                         className="text-muted-foreground hover:text-accent-foreground block duration-150"
+                        onClick={handleClick}
                       >
                         <span>{item.name}</span>
                       </Link>
@@ -113,7 +121,7 @@ export const HeroHeader = () => {
                   className={cn(isScrolled ? "lg:inline-flex" : "hidden")}
                 >
                   <Link href="/get-started">
-                    <span>Get Strated</span>
+                    <span>Get Started</span>
                   </Link>
                 </Button>
               </div>

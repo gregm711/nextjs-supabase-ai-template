@@ -5,6 +5,12 @@
 
 @plugin 'tailwindcss-animate';
 
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme {
