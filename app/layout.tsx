@@ -1,4 +1,4 @@
-import { Geist } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 
 import "./globals.css";
@@ -14,7 +14,12 @@ export const metadata = {
 };
 
 const geistSans = Geist({
-  display: "swap",
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
   subsets: ["latin"],
 });
 
@@ -24,8 +29,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`overflow-x-hidden antialiased`}>
+    <html lang="en" className={geistSans.className} suppressHydrationWarning>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} overflow-x-hidden antialiased`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
