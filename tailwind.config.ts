@@ -1,6 +1,5 @@
-/**
- * @type {import('tailwindcss').Config}
- */
+import type { Config } from "tailwindcss";
+
 const config = {
   darkMode: ["class"],
   content: [
@@ -10,24 +9,6 @@ const config = {
     "./src/**/*.{ts,tsx}",
   ],
   prefix: "",
-  safelist: [
-    "bg-background",
-    "text-foreground",
-    "bg-muted",
-    "text-muted",
-    "bg-primary",
-    "text-primary",
-    "bg-secondary",
-    "text-secondary",
-    "bg-accent",
-    "text-accent",
-    "bg-popover",
-    "text-popover",
-    "bg-card",
-    "text-card",
-    "border-border",
-    "ring-ring",
-  ],
   theme: {
     container: {
       center: true,
@@ -38,6 +19,9 @@ const config = {
     },
     extend: {
       colors: {
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
@@ -116,6 +100,6 @@ const config = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-};
+} satisfies Config;
 
 export default config;
