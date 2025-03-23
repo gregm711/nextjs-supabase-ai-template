@@ -81,6 +81,42 @@ const testimonials: Testimonial[] = [
         image: 'https://randomuser.me/api/portraits/men/13.jpg',
         quote: 'Tailus is so well designed that even with a very poor knowledge of web design you can do miracles. Let yourself be seduced!',
     },
+    {
+        name: 'Sarah Johnson',
+        role: 'UX Designer',
+        image: 'https://randomuser.me/api/portraits/women/1.jpg',
+        quote: 'As a designer, I appreciate how Tailus maintains visual consistency while offering enough flexibility for customization. It has cut my development time in half!',
+    },
+    {
+        name: 'Michael Chen',
+        role: 'Startup Founder',
+        image: 'https://randomuser.me/api/portraits/men/15.jpg',
+        quote: 'We launched our MVP in record time thanks to Tailus. The professional look of the components gave us instant credibility with investors.',
+    },
+    {
+        name: 'Priya Patel',
+        role: 'Frontend Developer',
+        image: 'https://randomuser.me/api/portraits/women/2.jpg',
+        quote: 'The attention to detail in Tailus components is impressive. From accessibility to responsive design, everything is thoughtfully implemented.',
+    },
+    {
+        name: 'David Wilson',
+        role: 'Agency Owner',
+        image: 'https://randomuser.me/api/portraits/men/20.jpg',
+        quote: 'Tailus has become our secret weapon for client projects. We can deliver high-quality websites faster than our competitors while maintaining excellent margins.',
+    },
+    {
+        name: 'Emma Rodriguez',
+        role: 'Product Manager',
+        image: 'https://randomuser.me/api/portraits/women/3.jpg',
+        quote: 'Our team was able to iterate quickly on our product using Tailus components. The consistent design system helped us maintain a cohesive user experience.',
+    },
+    {
+        name: 'James Lee',
+        role: 'Indie Developer',
+        image: 'https://randomuser.me/api/portraits/men/22.jpg',
+        quote: 'As a solo developer, Tailus has been invaluable. I can focus on building features instead of spending hours on UI details.',
+    },
 ]
 
 const chunkArray = (array: Testimonial[], chunkSize: number): Testimonial[][] => {
@@ -100,7 +136,7 @@ export default function WallOfLoveSection() {
                 <div className="mx-auto max-w-6xl px-6">
                     <div className="text-center">
                         <h2 className="text-title text-3xl font-semibold">Loved by the Community</h2>
-                        <p className="text-body mt-6">Harum quae dolore orrupti aut temporibus ariatur.</p>
+                        <p className="text-body mt-6">See what our users are saying about their experience with our platform.</p>
                     </div>
                     <div className="mt-8 grid gap-3 sm:grid-cols-2 md:mt-12 lg:grid-cols-3">
                         {testimonialChunks.map((chunk, chunkIndex) => (
